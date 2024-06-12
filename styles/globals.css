@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Regular.ttf"),
+      url("/fonts/Montserrat-Medium.ttf"), url("/fonts/Montserrat-SemiBold.ttf"),
+      url("/fonts/Montserrat-Bold.ttf"), url("/fonts/Montserrat-ExtraBold.ttf"),
+      url("/fonts/Montserrat-Black.ttf");
+  }
+
+  html {
+    font-family: "Montserrat";
+  }
+
+  body {
+    @apply bg-[#1E1E1E] text-[#606263];
+  }
+}
+
+@layer components {
+  /* General Styles */
+  .main-size {
+    @apply lg:max-w-[1440px] lg:mx-auto;
+  }
+
+  /* Home Page Styles */
+
+  .background-gradient {
+    background: radial-gradient(
+      257.47% 292.84% at 27.33% 32.69%,
+      rgba(252, 110, 81, 0.6) 0%,
+      #ef394e 100%
+    );
+  }
+
+  .heading--primary {
+    @apply font-black text-[30px] leading-[36.57px] mb-4 lg:text-[70px] lg:leading-[80px] lg:mb-10;
+  }
+
+  .heading--secondary {
+    @apply font-black text-primary text-[30px] leading-[37px] lg:text-[60px] lg:leading-[73px];
+  }
+
+  .text--primary {
+    @apply font-semibold leading-[24px] lg:text-[30px] lg:leading-[45px];
+  }
+
+  /* Tomato Section Styles */
+  .tomato__card {
+    @apply bg-white rounded-[20px] p-5 w-[311px] flex flex-col items-start lg:w-[538px] lg:p-[30px] lg:even:ml-[60px];
+    box-shadow: 0px 4px 20px 0px #3b434a0f;
+  }
+
+  .tomato__card__title {
+    @apply font-extrabold text-primary text-[24px] leading-[36px] mb-4 lg:text-[30px] lg:leading-[45px] lg:mb-5;
+  }
+
+  .tomato__card__text {
+    @apply leading-[24px] text-left lg:text-[20px] lg:leading-[38px] lg:font-semibold;
+  }
+
+  /* Products Section Styles */
+  .products {
+    @apply bg-primary pt-12 px-6 lg:rounded-tl-[275px] lg:rounded-bl-[275px] lg:ml-[180px] lg:py-[150px] lg:px-[180px];
+    background: radial-gradient(
+      86.63% 363.11% at 0% 0%,
+      rgba(252, 110, 81, 0.88) 0%,
+      #ef394e 100%
+    );
+  }
+
+  .products__title {
+    @apply text-white opacity-50 transition-all duration-200 text-[24px] leading-[36px] lg:text-[30px] lg:leading-[45px] lg:pl-8 lg:cursor-pointer lg:py-[7.5px] lg:whitespace-nowrap;
+  }
+
+  .products__title--active {
+    @apply text-white font-bold border-white border-l-[10px] opacity-100 lg:pl-5;
+  }
+
+  .products__line {
+    @apply lg:w-[2px] lg:h-[360px] lg:mr-[60px];
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .products__text {
+    @apply text-white lg:text-[26px] lg:leading-[40px];
+  }
+
+  /* Accordion Styles */
+  .accordion {
+    @apply flex flex-col gap-y-[11px] h-[430px] transition-all duration-300;
+  }
+
+  .accordion__title {
+    @apply flex justify-between items-center cursor-pointer   rounded-[5px] text-white mb-4 text-[24px] leading-[36px] transition-all duration-300;
+  }
+
+  .accordion__title h4 {
+    @apply py-2;
+  }
+
+  .accordion__content {
+    @apply max-h-0 overflow-hidden;
+    transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+  }
+
+  .accordion__content.show {
+    @apply h-auto max-h-[500px] transition-all duration-300;
+    transition: all 0.6s cubic-bezier(1, 0, 1, 0) !important;
+  }
+
+  .accordion__content p {
+    @apply text-[18px] leading-[26px] text-white  whitespace-pre-line;
+  }
+
+  /* Services Section Styles */
+  .services__card {
+    @apply bg-white rounded-[20px] w-[327px] p-5 lg:w-auto lg:p-[60px];
+  }
+
+  .services__card__title {
+    @apply font-black text-[24px] leading-[36px] mb-4 lg:text-[42px] lg:leading-[51.2px];
+  }
+
+  .services__card__text {
+    @apply leading-[24px] lg:text-[26px] lg:leading-[40px];
+  }
+
+  /* Footer Styles */
+  .footer {
+    @apply flex flex-col text-white pt-[72px] px-6 pb-6 gap-y-6 lg:px-[180px] lg:pt-[200px] lg:pb-[100px] lg:flex-row lg:gap-x-[115px];
+    background: linear-gradient(
+      180deg,
+      rgba(247, 247, 248, 0) 0%,
+      rgba(250, 119, 99, 0.2) 22.39%,
+      #ef394e 100%
+    );
+  }
+
+  .footer__heading {
+    @apply hidden lg:block lg:font-bold lg:text-[40px] lg:leading-[40px] lg:mb-[30px];
+  }
+
+  .footer__text {
+    @apply text-[14px] leading-[20px];
+  }
+
+  .footer__line {
+    @apply h-[3px] w-full lg:h-auto lg:w-[2px] lg:order-2;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  @screen md {
+    .background-gradient {
+      background: radial-gradient(
+        25.73% 108.88% at 75.73% 44%,
+        rgba(252, 110, 81, 0.6) 0%,
+        #ef394e 100%
+      );
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  overflow: visible !important;
+  padding-bottom: 15px !important;
+}
+
+.swiper-slide {
+  background: white;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  bottom: -25px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important ;
+  height: 12px !important ;
+  background: #bbb !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ef394e !important;
+}
